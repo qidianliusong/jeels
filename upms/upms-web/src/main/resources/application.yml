@@ -1,0 +1,54 @@
+spring:
+  application:
+    name: upms-web
+  profiles:
+    active: dev
+
+  http:
+    encoding:
+      force: true
+      charset: UTF-8
+      enabled: true
+
+  aop:
+    proxy-target-class: true
+  freemarker:
+    template-loader-path: classpath:/templates/
+    prefer-file-system-access: false
+    settings:
+      template_update_delay: 0
+      classic_compatible: true
+      number_format: 0.######
+      template_exception_handler: ignore
+    request-context-attribute: rc
+    charset: UTF-8
+
+  redis:
+    database: 0
+    host: 10.0.2.80
+    port: 3001
+    password: wcycno1
+    pool:
+      max-active: 8
+      max-wait: -1
+      max-idle: 18
+      min-idle: 0
+    timeout: 0
+
+
+sitemesh:
+  contentPath: /*
+  decoratorPath: classpath:/layouts/default.jsp
+  excludedPaths: /js/*,/assets/*,/css/*
+
+
+
+management:
+  security:
+    enabled: false
+
+
+security:
+  basic:
+    enabled: false
+

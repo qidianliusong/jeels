@@ -1,0 +1,47 @@
+spring:
+  application:
+    name: res-dubbo
+  profiles:
+    active: dev
+
+  aop:
+    proxy-target-class: true
+
+  redis:
+    database: 0
+    host: 10.0.2.80
+    port: 3001
+    password: wcycno1
+    pool:
+      max-active: 8
+      max-wait: -1
+      max-idle: 18
+      min-idle: 0
+    timeout: 0
+
+
+
+management:
+  security:
+    enabled: false
+
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.wcyc.upms.api.entity
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml
+  typeAliasesPackage: com.wcyc.upms.api.entity
+  global-config:
+    id-type: 2
+    field-strategy: 2
+    auto-set-db-type: true
+    db-column-underline: true
+    refresh-mapper: true
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: false
+security:
+  basic:
+    enabled: false
+

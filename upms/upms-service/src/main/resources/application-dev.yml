@@ -1,0 +1,33 @@
+attach_path: /home/liusong/git/slife/attach/
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://10.0.2.81/slife?useUnicode=true&characterEncoding=utf8&useSSL=false
+    username: slq
+    password: slq
+    druid:
+      validationQuery: SELECT 1
+      initialSize: 10
+      minIdle: 10
+      maxActive: 200
+      minEvictableIdleTimeMillis: 180000
+      testOnBorrow: false
+      testWhileIdle: true
+      removeAbandoned: true
+      removeAbandonedTimeout: 1800
+      logAbandoned: true
+      poolPreparedStatements: true
+      maxOpenPreparedStatements: 100
+  dubbo:
+    appname: upms-provider
+    registry: zookeeper://10.0.2.88:2181|zookeeper://10.0.2.88:2182
+    protocol: dubbo
+    port: 20882
+
+#logging:
+#  level:
+#   com: debug
+#   org: debug
+#  file: /home/liusong/logs/test111.log
+

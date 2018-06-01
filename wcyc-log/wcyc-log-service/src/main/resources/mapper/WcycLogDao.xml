@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.wcyc.log.dao.WcycLogDao">
+
+    <resultMap id="base_result_map" type="wcycLog">
+        <id property="id" column="id"></id>
+        <result property="ip" column="ip"></result>
+        <result property="params" column="params"></result>
+    </resultMap>
+    <select id="testPage" parameterType="java.util.Map" resultType="wcycLog">
+        select * from sys_log where 1=1
+        <if test="delFlag!=null and delFlag!=''">
+            and del_flag = #{delFlag}
+        </if>
+    </select>
+
+</mapper>
